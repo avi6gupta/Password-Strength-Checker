@@ -27,6 +27,7 @@ Partial Class Form1
         Me.pwdBox = New System.Windows.Forms.TextBox()
         Me.strgLabel = New System.Windows.Forms.Label()
         Me.ProgressBar = New System.Windows.Forms.ProgressBar()
+        Me.seqlbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'password
@@ -70,11 +71,21 @@ Partial Class Form1
         Me.ProgressBar.Size = New System.Drawing.Size(359, 23)
         Me.ProgressBar.TabIndex = 5
         '
+        'seqlbl
+        '
+        Me.seqlbl.AutoSize = True
+        Me.seqlbl.Location = New System.Drawing.Point(241, 258)
+        Me.seqlbl.Name = "seqlbl"
+        Me.seqlbl.Size = New System.Drawing.Size(51, 17)
+        Me.seqlbl.TabIndex = 6
+        Me.seqlbl.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(545, 344)
+        Me.Controls.Add(Me.seqlbl)
         Me.Controls.Add(Me.ProgressBar)
         Me.Controls.Add(Me.strgLabel)
         Me.Controls.Add(Me.pwdBox)
@@ -91,5 +102,6 @@ Partial Class Form1
     Friend WithEvents pwdBox As System.Windows.Forms.TextBox
     Friend WithEvents strgLabel As System.Windows.Forms.Label
     Friend WithEvents ProgressBar As System.Windows.Forms.ProgressBar
+    Friend WithEvents seqlbl As System.Windows.Forms.Label
 
 End Class

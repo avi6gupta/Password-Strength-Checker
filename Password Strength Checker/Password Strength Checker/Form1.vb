@@ -16,6 +16,7 @@
         Dim lcount As Integer = 0
         Dim ncount As Integer = 0
         Dim scount As Integer = 0
+        Dim msncount As Integer = 0
 
         For Each c As Char In pwd
             Dim charCode As Integer = AscW(c)
@@ -31,6 +32,11 @@
 
             End If
         Next
+
+        
+
+
+
 
         Dim perfect As Integer = 100
         Dim score As Integer = 0
@@ -50,12 +56,112 @@
         If (ucount + lcount) = passLen Then
             score -= passLen
         ElseIf ncount = passLen Then
+            score -= passLen * 2
+        ElseIf scount = passLen Then
             score -= passLen
         End If
 
+
+        For i As Integer = 0 To pwd.Length - 2
+
+            Dim seq As Integer = 1
+
+            While AscW(pwd.Chars(i)) = AscW(pwd.Chars(i + 1)) - 1
+                seq += 1
+                i += 1
+                If i = pwd.Length - 1 Then
+                    Exit While
+                End If
+            End While
+            If seq > 2 Then
+                score -= (seq - 3) * 3
+            End If
+        Next
+
+
+        For i As Integer = 0 To pwd.Length - 2
+
+            Dim rep_seq As Integer = 1
+
+            While AscW(pwd.Chars(i)) = AscW(pwd.Chars(i + 1))
+                rep_seq += 1
+                i += 1
+                If i = pwd.Length - 1 Then
+                    Exit While
+                End If
+            End While
+            If rep_seq > 1 Then
+                score -= (rep_seq) * 3
+            End If
+
+            seqlbl.Text = rep_seq
+        Next
+
+
+        For i As Integer = 0 To pwd.Length - 2
+
+
+            If AscW(pwd.Chars(i)) > 64 AndAlso AscW(pwd.Chars(i)) < 91 Then
+                Dim consi_upper_seq As Integer = 1
+                While AscW(pwd.Chars(i + 1)) > 64 AndAlso AscW(pwd.Chars(i + 1)) < 91
+                    consi_upper_seq += 1
+                    i += 1
+                    If i = pwd.Length - 1 Then
+                        Exit While
+                    End If
+                End While
+
+                score -= (consi_upper_seq * 2)
+            End If
+        Next
+
+        For i As Integer = 0 To pwd.Length - 2
+
+
+            If AscW(pwd.Chars(i)) > 96 AndAlso AscW(pwd.Chars(i)) < 123 Then
+                Dim consi_lower_seq As Integer = 1
+                While AscW(pwd.Chars(i + 1)) > 96 AndAlso AscW(pwd.Chars(i + 1)) < 123
+                    consi_lower_seq += 1
+                    i += 1
+                    If i = pwd.Length - 1 Then
+                        Exit While
+                    End If
+                End While
+
+                score -= (consi_lower_seq * 2)
+            End If
+        Next
+
+        For i As Integer = 0 To pwd.Length - 2
+
+
+            If AscW(pwd.Chars(i)) > 47 AndAlso AscW(pwd.Chars(i)) < 58 Then
+                Dim consi_num_seq As Integer = 1
+
+                While AscW(pwd.Chars(i + 1)) > 47 AndAlso AscW(pwd.Chars(i + 1)) < 58
+                    consi_num_seq += 1
+                    i += 1
+                    If i = pwd.Length - 1 Then
+                        Exit While
+                    End If
+                End While
+
+                score -= (consi_num_seq * 2)
+            End If
+        Next
+
+
+
+
+
+
         If score < perfect Then
-            strgLabel.Text = CStr(score) & "%"
-            ProgressBar.Value = score
+            If score < 0 Then
+                ProgressBar.Value = 0
+            Else
+                strgLabel.Text = CStr(score) & "%"
+                ProgressBar.Value = score
+            End If
         Else
             strgLabel.Text = "100%"
             ProgressBar.Value = 100
