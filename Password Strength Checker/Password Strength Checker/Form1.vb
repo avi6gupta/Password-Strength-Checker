@@ -18,7 +18,6 @@
 
 
         If pwd = confpwd Then
-            ProgressBar.ForeColor = Color.Green
 
 
             Dim ucount As Integer = 0
@@ -167,6 +166,7 @@
             If score < perfect Then
                 If score < 0 Then
                     ProgressBar.Value = 0
+                    strgLabel.Text = CStr(0) & "%"
                 Else
                     strgLabel.Text = CStr(score) & "%"
                     ProgressBar.Value = score
@@ -178,9 +178,7 @@
             End If
         Else
             strgLabel.Text = "Passwords do not match"
-            ProgressBar.BackColor = Color.Crimson
 
-            ProgressBar.Value = 0
 
         End If
 
