@@ -23,13 +23,13 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.password = New System.Windows.Forms.Label()
-        Me.exitButton = New System.Windows.Forms.Button()
-        Me.pwdBox = New System.Windows.Forms.TextBox()
         Me.strgLabel = New System.Windows.Forms.Label()
         Me.ProgressBar = New System.Windows.Forms.ProgressBar()
-        Me.seqlbl = New System.Windows.Forms.Label()
-        Me.pwdBoxEnter = New System.Windows.Forms.TextBox()
+        Me.pwdBox = New System.Windows.Forms.TextBox()
+        Me.strString = New System.Windows.Forms.Label()
+        Me.hideChkBox = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.suglbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'password
@@ -41,76 +41,79 @@ Partial Class Form1
         Me.password.TabIndex = 0
         Me.password.Text = "Enter Password"
         '
-        'exitButton
-        '
-        Me.exitButton.Location = New System.Drawing.Point(423, 289)
-        Me.exitButton.Name = "exitButton"
-        Me.exitButton.Size = New System.Drawing.Size(75, 23)
-        Me.exitButton.TabIndex = 2
-        Me.exitButton.Text = "Exit"
-        Me.exitButton.UseVisualStyleBackColor = True
-        '
-        'pwdBox
-        '
-        Me.pwdBox.Location = New System.Drawing.Point(160, 65)
-        Me.pwdBox.Name = "pwdBox"
-        Me.pwdBox.Size = New System.Drawing.Size(338, 22)
-        Me.pwdBox.TabIndex = 3
-        '
         'strgLabel
         '
         Me.strgLabel.AutoSize = True
-        Me.strgLabel.Location = New System.Drawing.Point(241, 185)
+        Me.strgLabel.Location = New System.Drawing.Point(241, 203)
         Me.strgLabel.Name = "strgLabel"
-        Me.strgLabel.Size = New System.Drawing.Size(71, 17)
+        Me.strgLabel.Size = New System.Drawing.Size(28, 17)
         Me.strgLabel.TabIndex = 4
-        Me.strgLabel.Text = "Too Short"
+        Me.strgLabel.Text = "0%"
         '
         'ProgressBar
         '
         Me.ProgressBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ProgressBar.Location = New System.Drawing.Point(95, 128)
+        Me.ProgressBar.Location = New System.Drawing.Point(85, 144)
         Me.ProgressBar.Name = "ProgressBar"
         Me.ProgressBar.Size = New System.Drawing.Size(359, 23)
         Me.ProgressBar.TabIndex = 5
         '
-        'seqlbl
+        'pwdBox
         '
-        Me.seqlbl.AutoSize = True
-        Me.seqlbl.Location = New System.Drawing.Point(241, 258)
-        Me.seqlbl.Name = "seqlbl"
-        Me.seqlbl.Size = New System.Drawing.Size(51, 17)
-        Me.seqlbl.TabIndex = 6
-        Me.seqlbl.Text = "Label1"
+        Me.pwdBox.Location = New System.Drawing.Point(160, 29)
+        Me.pwdBox.Name = "pwdBox"
+        Me.pwdBox.Size = New System.Drawing.Size(338, 22)
+        Me.pwdBox.TabIndex = 8
         '
-        'pwdBoxEnter
+        'strString
         '
-        Me.pwdBoxEnter.Location = New System.Drawing.Point(160, 29)
-        Me.pwdBoxEnter.Name = "pwdBoxEnter"
-        Me.pwdBoxEnter.Size = New System.Drawing.Size(338, 22)
-        Me.pwdBoxEnter.TabIndex = 8
+        Me.strString.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.strString.Location = New System.Drawing.Point(168, 237)
+        Me.strString.Name = "strString"
+        Me.strString.Size = New System.Drawing.Size(174, 25)
+        Me.strString.TabIndex = 9
+        Me.strString.Text = "Too Short"
+        Me.strString.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'hideChkBox
+        '
+        Me.hideChkBox.AutoSize = True
+        Me.hideChkBox.Location = New System.Drawing.Point(160, 85)
+        Me.hideChkBox.Name = "hideChkBox"
+        Me.hideChkBox.Size = New System.Drawing.Size(59, 21)
+        Me.hideChkBox.TabIndex = 10
+        Me.hideChkBox.Text = "Hide"
+        Me.hideChkBox.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 65)
+        Me.Label1.Location = New System.Drawing.Point(217, 279)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 17)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Confirm Password"
+        Me.Label1.Size = New System.Drawing.Size(86, 17)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Suggestions"
+        '
+        'suglbl
+        '
+        Me.suglbl.AutoSize = True
+        Me.suglbl.Location = New System.Drawing.Point(25, 317)
+        Me.suglbl.Name = "suglbl"
+        Me.suglbl.Size = New System.Drawing.Size(0, 17)
+        Me.suglbl.TabIndex = 12
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(545, 344)
-        Me.Controls.Add(Me.pwdBoxEnter)
+        Me.ClientSize = New System.Drawing.Size(545, 590)
+        Me.Controls.Add(Me.suglbl)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.seqlbl)
+        Me.Controls.Add(Me.hideChkBox)
+        Me.Controls.Add(Me.strString)
+        Me.Controls.Add(Me.pwdBox)
         Me.Controls.Add(Me.ProgressBar)
         Me.Controls.Add(Me.strgLabel)
-        Me.Controls.Add(Me.pwdBox)
-        Me.Controls.Add(Me.exitButton)
         Me.Controls.Add(Me.password)
         Me.Name = "Form1"
         Me.Text = "Password Strength Checker"
@@ -119,11 +122,11 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents password As System.Windows.Forms.Label
-    Friend WithEvents exitButton As System.Windows.Forms.Button
-    Friend WithEvents pwdBox As System.Windows.Forms.TextBox
     Friend WithEvents strgLabel As System.Windows.Forms.Label
     Friend WithEvents ProgressBar As System.Windows.Forms.ProgressBar
-    Friend WithEvents seqlbl As System.Windows.Forms.Label
-    Friend WithEvents pwdBoxEnter As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents pwdBox As TextBox
+    Friend WithEvents strString As System.Windows.Forms.Label
+    Friend WithEvents hideChkBox As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents suglbl As System.Windows.Forms.Label
 End Class
