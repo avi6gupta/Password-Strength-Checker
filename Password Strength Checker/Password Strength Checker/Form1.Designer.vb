@@ -28,6 +28,8 @@ Partial Class Form1
         Me.strgLabel = New System.Windows.Forms.Label()
         Me.ProgressBar = New System.Windows.Forms.ProgressBar()
         Me.seqlbl = New System.Windows.Forms.Label()
+        Me.pwdBoxEnter = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'password
@@ -50,7 +52,7 @@ Partial Class Form1
         '
         'pwdBox
         '
-        Me.pwdBox.Location = New System.Drawing.Point(160, 24)
+        Me.pwdBox.Location = New System.Drawing.Point(160, 65)
         Me.pwdBox.Name = "pwdBox"
         Me.pwdBox.Size = New System.Drawing.Size(338, 22)
         Me.pwdBox.TabIndex = 3
@@ -66,6 +68,7 @@ Partial Class Form1
         '
         'ProgressBar
         '
+        Me.ProgressBar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ProgressBar.Location = New System.Drawing.Point(95, 128)
         Me.ProgressBar.Name = "ProgressBar"
         Me.ProgressBar.Size = New System.Drawing.Size(359, 23)
@@ -80,11 +83,29 @@ Partial Class Form1
         Me.seqlbl.TabIndex = 6
         Me.seqlbl.Text = "Label1"
         '
+        'pwdBoxEnter
+        '
+        Me.pwdBoxEnter.Location = New System.Drawing.Point(160, 29)
+        Me.pwdBoxEnter.Name = "pwdBoxEnter"
+        Me.pwdBoxEnter.Size = New System.Drawing.Size(338, 22)
+        Me.pwdBoxEnter.TabIndex = 8
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(25, 65)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 17)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Confirm Password"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(545, 344)
+        Me.Controls.Add(Me.pwdBoxEnter)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.seqlbl)
         Me.Controls.Add(Me.ProgressBar)
         Me.Controls.Add(Me.strgLabel)
@@ -103,5 +124,6 @@ Partial Class Form1
     Friend WithEvents strgLabel As System.Windows.Forms.Label
     Friend WithEvents ProgressBar As System.Windows.Forms.ProgressBar
     Friend WithEvents seqlbl As System.Windows.Forms.Label
-
+    Friend WithEvents pwdBoxEnter As TextBox
+    Friend WithEvents Label1 As Label
 End Class
