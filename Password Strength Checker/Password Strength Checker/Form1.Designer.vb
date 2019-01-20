@@ -46,7 +46,7 @@ Partial Class Form1
         Me.exitButton.Location = New System.Drawing.Point(423, 289)
         Me.exitButton.Name = "exitButton"
         Me.exitButton.Size = New System.Drawing.Size(75, 23)
-        Me.exitButton.TabIndex = 2
+        Me.exitButton.TabIndex = 8
         Me.exitButton.Text = "Exit"
         Me.exitButton.UseVisualStyleBackColor = True
         '
@@ -54,6 +54,7 @@ Partial Class Form1
         '
         Me.pwdBox.Location = New System.Drawing.Point(160, 65)
         Me.pwdBox.Name = "pwdBox"
+        Me.pwdBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(43)
         Me.pwdBox.Size = New System.Drawing.Size(338, 22)
         Me.pwdBox.TabIndex = 3
         '
@@ -87,8 +88,9 @@ Partial Class Form1
         '
         Me.pwdBoxEnter.Location = New System.Drawing.Point(160, 29)
         Me.pwdBoxEnter.Name = "pwdBoxEnter"
+        Me.pwdBoxEnter.PasswordChar = Global.Microsoft.VisualBasic.ChrW(43)
         Me.pwdBoxEnter.Size = New System.Drawing.Size(338, 22)
-        Me.pwdBoxEnter.TabIndex = 8
+        Me.pwdBoxEnter.TabIndex = 2
         '
         'Label1
         '
